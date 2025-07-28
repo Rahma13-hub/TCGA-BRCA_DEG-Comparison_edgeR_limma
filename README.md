@@ -22,6 +22,9 @@ In conclusion, shared DEGs offer a stronger and more consistent signal for diffe
 - 30 pathways shared between edgeR & limma.
 - 22 pathways unique to edgeR.
 - 25 pathways unique to limma.
+- 3854 uniqe gene found with edgeR (27.2%)
+- 3968 uniqe gene found with limma (28%)
+- 6363 shared genes between edgeR and limma (44.9%)
 -  ## Top Shared Pathways & Their Relationship to Breast Cancer
 | Pathway | Biological Role in BRCA |
 |--------|--------------------------|
