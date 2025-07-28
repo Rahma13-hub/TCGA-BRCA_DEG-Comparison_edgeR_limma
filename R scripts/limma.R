@@ -109,6 +109,3 @@ pca_limma <- prcomp(t(logcpm_lima), scale. = TRUE)
 plot(pca_limma$x[,1:2], col = group, pch = 19,
      main = "PCA - limma", xlab = "PC1", ylab = "PC2")
 legend("topright", legend = levels(group), col = 1:2, pch = 19)
-genes = readLines("limma_significant_genes.txt")
-genes_clean = sub("\\..*", "", genes)
-writeLines(genes_clean, "limma.significant.clean.txt")
