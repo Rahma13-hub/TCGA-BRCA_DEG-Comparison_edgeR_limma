@@ -76,20 +76,6 @@ pheatmap(logCPM_sig_limma,
          clustering_method = "complete",
          show_rownames = F,
          fontsize_col = 10)
-#use top 100 edgeR genes on limma expression matrix
-top_genes_edgeR <- rownames(head(sig_edgeR[order(-abs(sig_edgeR$logFC)), ], 100))
-logCPM_limma_edgeRGenes <- logCPM[top_genes_edgeR, ]
-annotation_col <- data.frame(Group = group)
-rownames(annotation_col) <- colnames(logCPM_limma_edgeRGenes)
-pheatmap(logCPM_limma_edgeRGenes,
-         annotation_col = annotation_col,
-         scale = "row",
-         clustering_distance_rows = "euclidean",
-         clustering_distance_cols = "euclidean",
-         clustering_method = "complete",
-         show_rownames = FALSE,
-         fontsize_col = 10,
-         main = "Heatmap (limma, using edgeR's top genes)")
 #visualize DEGs genes using volcano plot
 results_limma$significant <- with(results_limma, adj.P.Val < 0.05 & abs(logFC) > 1)
 ggplot(results_limma, aes(x = logFC, y = -log10(adj.P.Val), color = significant)) +
